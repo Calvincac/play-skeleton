@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker'
-import { User } from '../types/user'
+import { User } from '../types/custom-types'
 
 export class DataBuilder {
     public getNewUser(): User {

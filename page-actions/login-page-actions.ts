@@ -2,7 +2,7 @@ import { Page, expect, Locator } from '@playwright/test'
 import { POManager } from '../page-objects/po-manager'
 import { LoginPage } from '../page-objects/login-page'
 import { DataBuilder } from '../data/data-builder'
-import { User } from '../types/user'
+import { User } from '../types/custom-types'
 import { logger } from '../utils/logger'
 
 export class LoginPageActions {

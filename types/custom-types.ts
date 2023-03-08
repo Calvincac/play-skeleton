@@ -5,3 +5,8 @@ export type User = {
     phoneNumber: string
     password: string
 }
+
+export type LoginPayload = {
+    userEmail: string
+    userPassword: string
+}

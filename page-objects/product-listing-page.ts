@@ -1,9 +1,11 @@
 import { Locator, Page } from '@playwright/test'
 
 export class ProductListingPage {
-    public firstName: Locator
+    public productCards: Locator
+    public productsAmount: Locator
 
     constructor(page: Page) {
-        this.firstName = page.locator('#firstName')
+        this.productCards = page.locator('.card')
+        this.productsAmount = page.locator('#res')
     }
 }

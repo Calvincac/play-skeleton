@@ -18,11 +18,11 @@ export class LoginPageActions {
         this.dataBuilder = new DataBuilder()
     }
 
-    public async visit() {
+    public async visit(): Promise<void> {
         await this.page.goto('https://rahulshettyacademy.com/client')
     }
 
-    public async registerNewUser() {
+    public async registerNewUser(): Promise<void> {
         const user: User = this.dataBuilder.getNewUser()
         await this.page.waitForLoadState('networkidle')
         await this.loginPage.registerButton.click()
@@ -38,7 +38,7 @@ export class LoginPageActions {
         logger('User created', user)
     }
 
-    public async login(userInfo: User) {
+    public async login(userInfo: User): Promise<void> {
         await this.page.waitForLoadState('networkidle')
         await this.loginPage.email.type(userInfo.email)
         await this.loginPage.password.type(userInfo.password)

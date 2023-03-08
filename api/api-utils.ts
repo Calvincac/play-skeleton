@@ -1,11 +1,17 @@
 import { APIRequestContext, APIResponse } from '@playwright/test'
-import { LoginPayload } from '../types/custom-types'
+import {
+    LoginRequestPayload,
+    LoginResponsePayload,
+} from '../types/custom-types'
 
 export class APIutils {
     apiContext: APIRequestContext
-    loginPayload: LoginPayload
+    loginPayload: LoginRequestPayload
 
-    constructor(apiContext: APIRequestContext, loginPayLoad: LoginPayload) {
+    constructor(
+        apiContext: APIRequestContext,
+        loginPayLoad: LoginRequestPayload
+    ) {
         this.apiContext = apiContext
         this.loginPayload = loginPayLoad
     }
@@ -17,8 +23,9 @@ export class APIutils {
                 data: this.loginPayload,
             }
         )
-        const loginResponseJson = await loginResponse.json()
-        const token = loginResponseJson.token
+        const loginResponseJson: LoginResponsePayload =
+            await loginResponse.json()
+        const token: string = loginResponseJson.token
         return token
     }
 }

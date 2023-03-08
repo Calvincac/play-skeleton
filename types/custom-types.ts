@@ -6,7 +6,13 @@ export type User = {
     password: string
 }
 
-export type LoginPayload = {
+export type LoginRequestPayload = {
     userEmail: string
     userPassword: string
+}
+
+export type LoginResponsePayload = {
+    message: string
+    token: string
+    userId: string
 }

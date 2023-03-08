@@ -44,7 +44,7 @@ export class LoginPageActions {
         await this.loginPage.password.type(userInfo.password)
         await this.loginPage.loginButton.click()
         await this.page.waitForLoadState('networkidle')
-        expect(this.loginPage.email).not.toBeVisible()
-        expect(this.loginPage.password).not.toBeVisible()
+        await expect(this.loginPage.email).not.toBeVisible()
+        await expect(this.loginPage.password).not.toBeVisible()
     }
 }
